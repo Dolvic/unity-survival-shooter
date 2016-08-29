@@ -62,8 +62,10 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Ammo"))
         {
             var playerShooting = GetComponentInChildren<PlayerShooting>();
-            playerShooting.AddAmmo();
-            Destroy(other.gameObject);
+            if (playerShooting.AddAmmo())
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 }
