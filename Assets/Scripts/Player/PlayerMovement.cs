@@ -9,12 +9,16 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRigidbody;
     private int floorMask;
     private float camRayLength = 100f;
+    private PlayerShooting playerShooting;
+    private PlayerHealth playerHealth;
 
     public void Awake()
     {
         floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
+        playerHealth = GetComponent<PlayerHealth>();
+        playerShooting = GetComponentInChildren<PlayerShooting>();
     }
 
     public void FixedUpdate()
@@ -61,8 +65,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ammo"))
         {
-            var playerShooting = GetComponentInChildren<PlayerShooting>();
             if (playerShooting.AddAmmo())
+            {
+                Destroy(other.gameObject);
+            }
+        } else if (other.gameObject.CompareTag("Health"))
+        {
+            if (playerHealth.AddHealth(other.gameObject.GetComponent<Health>().value))
             {
                 Destroy(other.gameObject);
             }

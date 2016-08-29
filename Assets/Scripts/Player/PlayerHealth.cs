@@ -57,6 +57,19 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public bool AddHealth(int amount)
+    {
+        if (currentHealth == startingHealth)
+        {
+            return false;
+        }
+
+        var newHealth = currentHealth + amount;
+        currentHealth = newHealth < startingHealth ? newHealth : startingHealth;
+        healthSlider.value = currentHealth;
+        return true;
+    }
+
     private void Death()
     {
         isDead = true;
