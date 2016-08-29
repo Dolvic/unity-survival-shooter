@@ -431,6 +431,7 @@ GameObject:
   - 222: {fileID: 395656255}
   - 114: {fileID: 395656254}
   - 114: {fileID: 395656253}
+  - 114: {fileID: 395656256}
   m_Layer: 5
   m_Name: AmmoText
   m_TagString: Untagged
@@ -508,6 +509,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 395656251}
+--- !u!114 &395656256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395656251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2bd378331d1a284eabdbd6f17a17554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerShooting: {fileID: 1942528611}
 --- !u!1 &409747634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,6 +1665,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1768027008}
+--- !u!114 &1942528611 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000014249197252, guid: f241560abf924974ba4583f5ef036806,
+    type: 2}
+  m_PrefabInternal: {fileID: 1125432792}
+  m_Script: {fileID: 11500000, guid: 27c63be2a8918c741863160b9d9da122, type: 3}
 --- !u!1 &2112717495
 GameObject:
   m_ObjectHideFlags: 0

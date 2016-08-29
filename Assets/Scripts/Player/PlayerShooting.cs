@@ -16,7 +16,7 @@ public class PlayerShooting : MonoBehaviour
     private AudioSource gunAudio;
     private Light gunLight;
     private float effectsDisplayTime = 0.2f;
-    private int currentAmmo;
+    public int currentAmmo { get; private set; }
 
     public void Awake()
     {
