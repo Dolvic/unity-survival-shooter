@@ -3,26 +3,25 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
-    Transform player;
+    private Transform player;
     //PlayerHealth playerHealth;
     //EnemyHealth enemyHealth;
-    NavMeshAgent nav;
+    private NavMeshAgent nav;
 
 
-    void Awake ()
+    public void Awake()
     {
-        player = GameObject.FindGameObjectWithTag ("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         //playerHealth = player.GetComponent <PlayerHealth> ();
         //enemyHealth = GetComponent <EnemyHealth> ();
-        nav = GetComponent <NavMeshAgent> ();
+        nav = GetComponent<NavMeshAgent>();
     }
 
-
-    void Update ()
+    public void Update()
     {
         //if(enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
         //{
-            nav.SetDestination (player.position);
+        nav.SetDestination(player.position);
         //}
         //else
         //{
