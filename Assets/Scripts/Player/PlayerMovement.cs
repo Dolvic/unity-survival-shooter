@@ -56,4 +56,14 @@ public class PlayerMovement : MonoBehaviour
         var walking = horizontal != 0f || vertical != 0f;
         anim.SetBool("IsWalking", walking);
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Ammo"))
+        {
+            var playerShooting = GetComponentInChildren<PlayerShooting>();
+            playerShooting.AddAmmo();
+            Destroy(other.gameObject);
+        }
+    }
 }

@@ -49,6 +49,11 @@ public class PlayerShooting : MonoBehaviour
         gunLight.enabled = false;
     }
 
+    public void AddAmmo()
+    {
+        currentAmmo = 20;
+    }
+
     private void Shoot()
     {
         timer = 0f;

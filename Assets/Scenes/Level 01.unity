@@ -1060,6 +1060,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad67cddd729fb4342be2063a3f5ad7cc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &841858238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 841858239}
+  m_Layer: 0
+  m_Name: AmmoSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 484878306007051821, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &841858239
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 841858238}
+  m_LocalRotation: {x: 0.46193978, y: 0.19134173, z: 0.19134173, w: 0.84462327}
+  m_LocalPosition: {x: -1.5, y: 0.5, z: -20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 45}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
 --- !u!1 &1019290129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,6 +1172,10 @@ Prefab:
       propertyPath: damageImage
       value: 
       objectReference: {fileID: 157247759}
+    - target: {fileID: 1000011593817468, guid: f241560abf924974ba4583f5ef036806, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f241560abf924974ba4583f5ef036806, type: 2}
   m_IsPrefabParent: 0
@@ -1529,6 +1561,7 @@ GameObject:
   - 114: {fileID: 1682955636}
   - 114: {fileID: 1682955639}
   - 114: {fileID: 1682955638}
+  - 114: {fileID: 1682955640}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -1597,6 +1630,22 @@ MonoBehaviour:
   spawnTime: 3
   spawnPoints:
   - {fileID: 1344613911}
+--- !u!114 &1682955640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1682955635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a99222b1e4a384e923ac7e86efc709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1125432794}
+  enemy: {fileID: 1000011371134584, guid: 1d1b36ac331075e45a2ed92a4b9aa7c3, type: 2}
+  spawnTime: 3
+  spawnPoints:
+  - {fileID: 841858239}
 --- !u!1 &1768027008
 GameObject:
   m_ObjectHideFlags: 0
