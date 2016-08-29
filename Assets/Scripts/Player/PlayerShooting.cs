@@ -5,6 +5,7 @@ public class PlayerShooting : MonoBehaviour
     public int damagePerShot = 20;
     public float timeBetweenBullets = 0.15f;
     public float range = 100f;
+    public int maxAmmo = 20;
 
     private float timer;
     private Ray shootRay;
@@ -15,6 +16,7 @@ public class PlayerShooting : MonoBehaviour
     private AudioSource gunAudio;
     private Light gunLight;
     private float effectsDisplayTime = 0.2f;
+    private int currentAmmo;
 
     public void Awake()
     {
@@ -23,13 +25,14 @@ public class PlayerShooting : MonoBehaviour
         gunLine = GetComponent<LineRenderer>();
         gunAudio = GetComponent<AudioSource>();
         gunLight = GetComponent<Light>();
+        currentAmmo = maxAmmo;
     }
 
     public void Update()
     {
         timer += Time.deltaTime;
 
-        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
+        if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0 && currentAmmo > 0)
         {
             Shoot();
         }
@@ -49,6 +52,7 @@ public class PlayerShooting : MonoBehaviour
     private void Shoot()
     {
         timer = 0f;
+        currentAmmo--;
 
         gunAudio.Play();
 
