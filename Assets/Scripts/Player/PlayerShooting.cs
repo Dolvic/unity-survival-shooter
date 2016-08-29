@@ -52,9 +52,9 @@ public class PlayerShooting : MonoBehaviour
     public bool AddAmmo()
     {
         bool ammoAdded = false;
-        if (currentAmmo < 20)
+        if (currentAmmo < maxAmmo)
         {
-            currentAmmo = 20;
+            currentAmmo = maxAmmo;
             ammoAdded = true;
         }
         return ammoAdded;
